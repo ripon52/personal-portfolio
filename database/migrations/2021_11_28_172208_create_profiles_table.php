@@ -16,6 +16,7 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->string('picture')->nullable();
+            $table->longText('about')->nullable();
             $table->string('nid')->nullable();
             $table->string('dob')->nullable();
             $table->string('work_office')->nullable();
@@ -26,6 +27,9 @@ class CreateProfilesTable extends Migration
             $table->string('office_id')->nullable();
             $table->text('current_address')->nullable();
             $table->text('permanent_address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('website')->nullable();
+            $table->string('degree')->nullable();
             $table->timestamps();
         });
     }
