@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="8005438f-1f0a-40b8-bc4d-257c79805cdb" name="EDU Library" url="http://ftp.ruarman.com">
+        <fileTransfer rootFolder="/edulibrary.ruarman.com" host="ftp.ruarman.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
