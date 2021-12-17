@@ -31,16 +31,17 @@
                 @forelse (myArticles() as $key=>$article)
                 <div class="col-lg-4 col-md-6 portfolio-item category{{ $article->category_id }}">
                     <div class="portfolio-wrap">
-                        <img src="{{asset('project_files/articleResource/'.$article->files[0]->name) }}"
+                        <img
+                            src="{{  $article->files->count()>0 ? asset('project_files/articleResource/'.$article->files[0]->name) : asset('website/assets/img/portfolio/portfolio-3.jpg') }}"
                             class="img-fluid" alt="">
                         <div class="portfolio-info">
                             <h4>{{ $article->title}}</h4>
                             <p>{{ $article->category->name }}</p>
                             <div class=" portfolio-links">
-                                <a href="{{ asset('project_files/articleResource/'.$article->files[0]->name) }}"
+                                    <a
+                                        href="{{ $article->files->count()>0 ? asset('project_files/articleResource/'.$article->files[0]->name) : asset('website/assets/img/portfolio/portfolio-3.jpg')  }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox"
                                     title="{{ $article->title }}"><i class="bx bx-plus"></i></a>
-
                                 <a href="{{  route('detailsPage',$article->id)}}" class="portfolio-details-lightbox"
                                     data-glightbox="type: external" title="Portfolio Details"><i
                                         class="bx bx-link"></i></a>

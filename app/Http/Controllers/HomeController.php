@@ -7,6 +7,8 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Traits\StoreImageTrait;
+use Illuminate\Support\Facades\Hash;
+
 class HomeController extends Controller
 {
     use StoreImageTrait;
@@ -66,5 +68,28 @@ class HomeController extends Controller
         }
         session()->flash('success','Profile Information updated successfully');
         return redirect()->back();
+    }
+
+    public function changePassword(){
+        return view('profile.change-password');
+    }
+
+    public function updatePassword(Request $request){
+        $oldPassword = $request->password;
+        $newPassword = $request->newPassword;
+
+        $user = Auth::user();
+
+        if (Hash::check($request->password, $user->password)) {
+            $user->update([
+                'password' => Hash::make($request->newPassword)
+            ]);
+            session()->flash('success', 'Password updated successfully');
+            return redirect()->route('profile.changePassword');
+        }else{
+            session()->flash('success', 'Old Password not matched');
+            return redirect()->route('profile.changePassword');
+        }
+
     }
 }

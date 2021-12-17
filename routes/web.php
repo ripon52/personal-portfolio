@@ -62,6 +62,8 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get("/profile/edit/{id}",'HomeController@profileEdit')->name('profile.edit');
     Route::post("/profile/update/{id}",'HomeController@profileUpdate')->name('profile.update');
+    Route::get("/change-password",'HomeController@changePassword')->name('profile.changePassword');
+    Route::post("/updatePassword",'HomeController@updatePassword')->name('profile.updatePassword');
 
     Route::prefix("Skill")->name('skill.')->group(function (){
         $category = "SkillController@";
