@@ -60,11 +60,12 @@ use Illuminate\Support\Facades\DB;
     }
 
     function articleCategories(){
-        return ArticleResource::query()->with('category')->where('isArticle',1)->groupBy('category_id')->get();
+        return Category::query()->whereHas('articles')->get();
     }
     
     function resourceCategories(){
-        return ArticleResource::query()->with('category')->where('isArticle',2)->groupBy('category_id')->get();
+        return Category::query()->whereHas('resources')->get();
+       // return ArticleResource::query()->with('category')->where('isArticle',2)->groupBy('category_id')->get();
     }
 
     
