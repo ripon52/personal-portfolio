@@ -28,8 +28,8 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        $users = ["admin@gmail.com."];
-        $names = ["Admin"];
+        $users = ["linkoncu@gmail.com"];
+        $names = ["Linkon Chowdhury"];
 
         foreach ($users as $key => $user){
             \App\User::query()->create([
