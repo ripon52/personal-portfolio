@@ -5,6 +5,7 @@
     </a>
     <ul aria-expanded="false">
         <li><a href="{{ route('profile.edit',1) }}"> Update Profile</a></li>
+        <li><a href="{{ route('profile.changePassword') }}"> Change Password</a></li>
     </ul>
 </li>
 
@@ -16,7 +17,7 @@
     <ul aria-expanded="false">
         <li><a href="{{ route('skill.add') }}">Skill Manage</a></li>
         <li><a href="{{ route('category.add') }}">Article/Resource Category</a></li>
-        <li><a href="{{ route('certification.add') }}">Certification Category</a> </li>
+        <li><a href="{{ route('certification.add') }}">Certification Category</a> </li>á
     </ul>
 </li>
 
