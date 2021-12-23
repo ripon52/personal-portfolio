@@ -21,6 +21,7 @@ class CreateExperiencesTable extends Migration
             $table->string('join_date')->nullable();
             $table->string('left_date')->nullable();
             $table->string('website')->nullable();
+            $table->integer('position')->nullable();
             $table->timestamps();
         });
     }
