@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
         return Category::query()->orderBy('name')->get() ?? null;
     }
 
-    
+
     function certifications() {
         return CertificateTitle::query()->orderBy('name')->get() ?? null;
     }
@@ -23,16 +23,20 @@ use Illuminate\Support\Facades\DB;
     function certification_pluck() {
         return CertificateTitle::query()->orderBy('name')->pluck('name','id') ?? null;
     }
-    
+
 
     function category_pluck() {
         return Category::query()->orderBy('name')->pluck('name','id') ?? null;
     }
-    
 
-    
+
+
     function graduations() {
         return Graduation::query()->orderBy('title')->get() ?? null;
+    }
+
+    function experiences() {
+        return \App\Experience::query()->orderBy('designation')->get() ?? null;
     }
 
     function articles() {
@@ -62,10 +66,9 @@ use Illuminate\Support\Facades\DB;
     function articleCategories(){
         return Category::query()->whereHas('articles')->get();
     }
-    
+
     function resourceCategories(){
         return Category::query()->whereHas('resources')->get();
        // return ArticleResource::query()->with('category')->where('isArticle',2)->groupBy('category_id')->get();
     }
 
-    

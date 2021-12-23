@@ -107,6 +107,14 @@ Route::middleware(['auth'])->group(function(){
         Route::get('/view',$graduation.'view')->name('view');
     });
 
+    Route::prefix("experience")->name('experience.')->group(function (){
+        $experience = "ExperienceController@";
+        Route::get('/',$experience.'index')->name('add');
+        Route::get('/edit/{id}',$experience.'edit')->name('edit');
+        Route::post('/store',$experience.'store')->name('store');
+        Route::post('/update/{id}',$experience.'update')->name('update');
+        Route::post('/destroy/{id}',$experience.'destroy')->name('destroy');
+    });
 
     Route::prefix("articleResource")->name('article.')->group(function (){
         $articleResource = "ArticleResourceController@";

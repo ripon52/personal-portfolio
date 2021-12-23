@@ -1,17 +1,17 @@
 @extends('layouts.admin')
 
-@section('title','Update Graduation : '.$graduation->name)
+@section('title','Update Experience : '.$experience->name)
 
 @section('content')
 <div class="page-titles">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="javascript:void(0)">Graduation</a></li>
-        <li class="breadcrumb-item active"><a href="javascript:void(0)">Update {{ $graduation->name }} Profile</a></li>
+        <li class="breadcrumb-item"><a href="javascript:void(0)">Experience</a></li>
+        <li class="breadcrumb-item active"><a href="javascript:void(0)">Update {{ $experience->name }} Profile</a></li>
     </ol>
 </div>
 
 <div class="row">
-    {{-- Graduation Form Start --}}
+    {{-- Experience Form Start --}}
     <div class="col-xl-12 col-lg-12 col-12">
         <div class="card">
             <div class="card-header">
@@ -19,27 +19,27 @@
             </div>
             <div class="card-body">
                 <div class="basic-form">
-                    {{ Form::model($graduation,['route'=>['graduation.update',$graduation->id],'method'=>"post",'files'=>true]) }}
-                    @include('graduation.form-graduation',["button"=>"Update Graduation"])
+                    {{ Form::model($experience,['route'=>['experience.update',$experience->id],'method'=>"post",'files'=>true]) }}
+                    @include('experience.form-experience',["button"=>"Update Experience"])
                     {{ Form::close() }}
                 </div>
             </div>
         </div>
     </div>
-    {{-- Graduation Form End --}}
+    {{-- Experience Form End --}}
 
-    {{-- Graduation Lists Start --}}
+    {{-- Experience Lists Start --}}
     <div class="col-xl-12 col-lg-12 col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">graduations</h4>
+                <h4 class="card-title">Experiences</h4>
             </div>
             <div class="card-body">
-                @include('graduation.graduations')
+                @include('experience.experiences')
             </div>
         </div>
     </div>
-    {{-- Graduation Lists End --}}
+    {{-- Experience Lists End --}}
 
 </div>
 

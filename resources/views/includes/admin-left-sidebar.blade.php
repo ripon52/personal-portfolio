@@ -35,6 +35,17 @@
 <li>
     <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
         <i class="fa fa-book"></i>
+        <span class="nav-text">Manage Experience</span>
+    </a>
+    <ul aria-expanded="false">
+        <li><a href="{{ route('experience.add') }}">Experience Add/Update</a></li>
+    </ul>
+</li>
+
+
+<li>
+    <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+        <i class="fa fa-book"></i>
         <span class="nav-text">Manage Article/Resource</span>
     </a>
     <ul aria-expanded="false">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Experience;
 use App\Traits\StoreImageTrait;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ExperienceController extends Controller
 {
@@ -20,10 +21,10 @@ class ExperienceController extends Controller
             'designation'=>"required",
             'join_date'=>"required",
             'left_date'=>"required",
-            'website'=>"required",
-            'position'=>"required",
+            'position'=>["required",Rule::unique('experiences')->where('position',$request->position)],
         ]);
         $data = $request->all();
+
         $experience = Experience::query()->create($data);
         session()->flash('success','New experience Record created.');
         return redirect()->route('experience.add');
@@ -43,8 +44,7 @@ class ExperienceController extends Controller
             'designation'=>"required",
             'join_date'=>"required",
             'left_date'=>"required",
-            'website'=>"required",
-            'position'=>"required",
+            'position'=>["required",Rule::unique('experiences')->ignore($id)],
         ]);
 
         $data = $request->all();
