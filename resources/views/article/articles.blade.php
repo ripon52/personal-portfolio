@@ -3,6 +3,10 @@
         <thead>
             <tr>
                 <th>SL</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Year</th>
+                <th>DOI</th>
                 <th>Category</th>
                 <th>Title</th>
                 <th>Body</th>
@@ -15,6 +19,10 @@
             @forelse(Articles() as $key=>$article_list)
             <tr>
                 <td> {{ $loop->iteration }}</td>
+                <td>{{ $article_list->author }}</td>
+                <td>{{ $article_list->publisher }}</td>
+                <td>{{ $article_list->year }}</td>
+                <td>{{ $article_list->doi }}</td>
                 <td>{{ $article_list->category->name }}</td>
                 <td>{{ $article_list->title }}</td>
                 <td>{{ $article_list->body }}</td>

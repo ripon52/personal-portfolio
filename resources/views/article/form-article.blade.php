@@ -1,4 +1,32 @@
 <div class="row">
+
+    <div class="col-lg-3">
+        <div class="form-group">
+            <label>Author*</label>
+            {{ Form::text('author',null,['class'=>'form-control','placeholder'=>'Ex. Linkhon Chy','required']) }}
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="form-group">
+            <label>Publisher.*</label>
+            {{ Form::text('publisher',null,['class'=>'form-control','placeholder'=>'Ex. Google Publisher','required']) }}
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="form-group">
+            <label>Year.*</label>
+            {{ Form::text('year',null,['class'=>'form-control','placeholder'=>'Ex. '.Date('Y')]) }}
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="form-group">
+            <label>DOI.*</label>
+            {{ Form::text('doi',null,['class'=>'form-control','placeholder'=>'Ex. '.rand(1111,9999),'required']) }}
+        </div>
+    </div>
     <div class="col-lg-3">
         <div class="form-group">
             <label>Select Category</label>
