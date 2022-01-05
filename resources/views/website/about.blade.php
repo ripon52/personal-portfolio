@@ -89,7 +89,71 @@
             </div>
 
         </div>
-    </section><!-- End Skills Section -->
+    </section>
+    <!-- End Skills Section -->
+
+     <!-- Experience Start -->
+     <section id="skills" class="skills">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Experience</h2>
+            </div>
+
+            @forelse (experiences() as $experience)
+                <div class="row skills-content mb-3" style="border: 1px solid rgba(0,0,0,0.2); padding:10px;">
+
+                        <div class="col-lg-4">
+                            <h2 class="text-success">{{ $experience->organization }}</h2>
+                        </div>
+
+                        <div class="col-lg-6 text-right" style="text-align:right">
+                            <h4>{{ $experience->designation }}</h4>
+                            
+                            <p><i> {{ $experience->body }}  </i></p>
+                        </div>
+
+                        <div class="col-lg-2">
+                            <p class="text-danger"><i> {{ $experience->join_date }} to {{ $experience->left_date }} </i></p>  </i></p>
+                        </div>
+                </div>
+
+            @empty
+
+            @endforelse
+
+        </div>
+    </section>
+    <!-- Experience End -->
+
+    <!-- Certification Start -->
+    <section id="skills" class="skills">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+
+            <div class="row skills-content">
+                @forelse (graduations() as $graduation)
+                <div class="col-lg-6">
+                    <h2 class="text-center">{{ $graduation->certificate->name }} ,Certification</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">Title: <strong class="text-right" style="float: right;"> {{ $graduation->title }} </strong></li>
+                        <li class="list-group-item">Institute: <strong class="text-right" style="float: right;"> {{ $graduation->institute }} </strong></li>
+                        <li class="list-group-item">Session: <strong class="text-right" style="float: right;"> {{ $graduation->session }} </strong></li>
+                        <li class="list-group-item">Passing Year: <strong class="text-right" style="float: right;"> {{ $graduation->passing_year }} </strong></li>
+                        <li class="list-group-item">Comments: <strong class="text-right" style="float: right;"> {{ $graduation->notes }} </strong></li>
+                    </ul>
+                </div>
+                @empty
+
+                @endforelse
+            </div>
+
+        </div>
+    </section>
+    <!-- Certification End -->
 
     <!-- ======= Facts Section ======= -->
     <section id="facts" class="facts">
