@@ -33,8 +33,13 @@
                         <img src="{{  $article->files->count()>0 ? asset('project_files/articleResource/'.$article->files[0]->name) : asset('website/assets/img/portfolio/portfolio-3.jpg') }}"
                             class="img-fluid" alt="">
                         <div class="portfolio-info">
-                            <h4>{{ $article->title}}</h4>
-                            <p>{{ $article->category->name }}</p>
+                            <h4>Title: {{ $article->title}}</h4>
+                            <p>Category: {{ $article->category->name }}</p>
+                            <p>Year: {{ $article->year }}</p>
+                            <p>Author: {{ $article->author }}</p>
+                            <p>Publisher: {{ $article->publisher }}</p>
+                            <a href="{{ $article->doi }}" >Doi: {{ $article->doi }}</a>
+
                             <div class=" portfolio-links">
                                 <a href="{{ $article->files->count()>0 ? asset('project_files/articleResource/'.$article->files[0]->name) : asset('website/assets/img/portfolio/portfolio-3.jpg')  }}"
                                     data-gallery="portfolioGallery" class="portfolio-lightbox"
